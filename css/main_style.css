@@ -1,0 +1,875 @@
+@font-face {
+    font-family: 'Google Sans Flex';
+    src: local('Google Sans Flex'), local('GoogleSansFlex');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    color: #2a2a2a;
+    font-family: "Google Sans Flex";
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #2a2a2a;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 9999;
+}
+
+header .rigth_nav ul {
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+header .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+header .left_nav ul {
+    display: flex;
+    gap: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center
+}
+
+.archive-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blue-block {
+    display: block;
+    position: relative;
+}
+
+.blue-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #0000FF;
+}
+
+.blue-block::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #0000FF;
+}
+
+.archive-link span{
+    margin-right: 8px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #2a2a2a;
+}
+
+.hamburger-btn {
+    display: none;
+}
+
+/* header */
+
+
+/* 메인 이미지칸  */
+/* 슬라이더 전체 영역 (헤더 80px 제외한 820px) */
+.main-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* 900px - 80px */
+    overflow: hidden;
+    background-color: #2a2a2a;
+    padding-top: 80px;
+}
+
+/* 슬라이드 아이템 */
+.slider-track {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* 이미지 비율 및 채우기 */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+    /* 영역에 맞게 자연스럽게 꽉 채움 */
+}
+
+/* 이미지 위 텍스트 오버레이 */
+.slide-content {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+}
+
+.slide-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.slide-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.7;
+}
+
+/* 좌우 화살표 버튼 */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.slider-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* 하단 인디케이터 점(Dot) */
+.slider-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* 메인 이미지칸  */
+
+/* 카드 섹션 전체 영역 (위 슬라이더와의 간격 120px) */
+.card-section {
+    width: 100%;
+    margin-top: 120px;
+    padding: 0 20px;
+    /* 화면 양옆 여백 */
+}
+
+/* 3열 가로 정렬 컨테이너 */
+.card-container {
+    display: flex;
+    gap: 20px;
+    /* 카드 사이 간격 */
+    max-width: 1, 880px;
+    /* 필요에 따라 전체 최대 너비 조절 */
+    margin: 0 auto;
+}
+
+/* 개별 카드 링크 박스 */
+.card-item {
+    position: relative;
+    flex: 1;
+    /* 3개의 카드가 동일한 너비를 가짐 */
+    aspect-ratio: 1 / 1;
+    /* 정사각형 비율 (필요시 height 지정으로 변경 가능) */
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+
+/* 카드 이미지 */
+.card-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    /* 호버 시 약간 확대되는 효과 (선택사항) */
+}
+
+/* 마우스 올렸을 때 이미지 살짝 확대 (원치 않으시면 삭제 가능) */
+.card-item:hover img {
+    transform: scale(1.05);
+}
+
+/* 아래에서 위로 올라오는 그라데이션 오버레이 */
+.card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 밑에서(bottom)부터 어두워지는 선형 그라데이션 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 30%, transparent 65%);
+    pointer-events: none;
+    /* 클릭 이벤트가 텍스트/링크로 넘어가도록 설정 */
+}
+
+/* 카드 내부 흰색 텍스트 영역 */
+.card-text {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    z-index: 2;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* 카드 제목 (SHOP, Ader Archive, Style Feed) */
+.card-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.8px;
+}
+
+/* 카드 설명문 */
+.card-text p {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    opacity: 0.7;
+    letter-spacing: -0.5px;
+}
+
+/* 기본 섹션 공통 스타일 (간격 120px) */
+.section {
+    width: 100%;
+    max-width: 1, 880px;
+    margin: 120px auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 섹션 제목 */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+/* 카드 그라데이션 및 호버 공통 */
+.grid-item,
+.promo-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.grid-item img,
+.grid-item small-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.grid-item img:last-child {
+    object-position: top;
+}
+
+.grid-item:hover img,
+.promo-item:hover img {
+    transform: scale(1.03);
+}
+
+.card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 35%, transparent 70%);
+    pointer-events: none;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    color: #fff;
+    z-index: 2;
+    right: 24px;
+}
+
+.banner-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+
+.banner-text p {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   1. 지금 주목해야 할 것들 (그리드 레이아웃)
+   ========================================== */
+.highlight-grid {
+    display: flex;
+    max-width: 1, 880px;
+    /* 필요에 따라 전체 최대 너비 조절 */
+    margin: 0 auto;
+    gap: 20px;
+    height: 500px;
+    /* 전체 높이 고정 */
+}
+
+/* 왼쪽 큰 배너 */
+.big-banner {
+    flex: 1;
+    height: 100%;
+}
+
+/* 오른쪽 배너 2개 영역 */
+.right-banners {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.small-banner {
+    flex: 1;
+    height: calc(50% - 10px);
+}
+
+
+/* ==========================================
+   2. 동그라미 브랜드 로고 리스트
+   ========================================== */
+.brand-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+}
+
+.brand-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: 2px solid #e5e5e5;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+.brand-item:hover .brand-circle {
+    border-color: #0000FF;
+}
+
+.brand-circle img {
+    max-width: 130%;
+    max-height: 130%;
+    object-fit: cover;
+}
+
+
+/* ==========================================
+   3. 하단 2열 배너 (ZARA)
+   ========================================== */
+.promo-grid {
+    display: flex;
+    gap: 20px;
+    height: 640px;
+}
+
+.promo-item {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    /* 자식 absolute 기준점 */
+    overflow: hidden;
+    /* 이미지 밖으로 나가는 부분 잘라내기 */
+}
+
+/* ★ 이 부분을 수정해주세요 ★ */
+.promo-grid a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+
+.promo-item .banner-text {
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+
+
+/* footer */
+/* 푸터 전체 영역 */
+.footer {
+    width: 100%;
+    background-color: #2a2a2a;
+    /* 어두운 다크 그레이/블랙 배경 */
+    color: #a0a0a0;
+    /* 연한 회색 텍스트 */
+    margin-top: 120px;
+    /* 상단 섹션과의 간격 120px */
+    padding: 60px 0 80px 0;
+    /* 상하 여백 */
+}
+
+/* 4열 레이아웃 컨테이너 */
+.footer-container {
+    max-width: 1880px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* 개별 열(Column) */
+.footer-col {
+    flex: 1;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.footer-col li {
+    font-size: 10px;
+    line-height: 4;
+    /* 항목 간 간격 조절 */
+    letter-spacing: -0.2px;
+}
+
+.footer-col:first-child,
+.footer-col:first-child a {
+    font-weight: 700;
+}
+
+/* 링크 스타일 */
+.footer-col a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+    /* 마우스 올려놓을 때 흰색으로 변경 */
+}
+
+/* 일반 설명 텍스트 (전화번호, 운영시간 등) */
+.footer-col .info-text {
+    color: #888888;
+}
+
+/* 기업 정보 텍스트 (영문) */
+.footer-col .company-info {
+    color: #777777;
+    font-size: 10px;
+}
+
+/* 카피라이트 */
+.footer-col .copyright {
+    margin-top: 12px;
+    color: #888888;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   1. 태블릿 버젼 (max-width: 1024px)
+   ========================================== */
+@media (max-width: 1024px) {
+
+    /* 헤더: 메뉴 숨김 처리 예시 (햄버거 메뉴용) */
+    .rigth_nav,
+    .left_nav {
+        display: none;
+        /* 필요시 햄버거 버튼만 보이도록 처리 */
+    }
+
+
+
+    /* left_nav 내부 li 제어 */
+    .left_nav {
+        display: block;
+    }
+
+    /* 텍스트, 검색, 위시리스트 li 숨김 */
+    .left_nav ul li {
+        display: none;
+    }
+
+    /* 마지막 쇼핑백 아이콘만 노출 */
+    .left_nav ul li:last-child {
+        display: flex;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .hamburger-btn span {
+        width: 18px;
+        height: 2px;
+        background-color: #000;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        order: 1;
+    }
+
+    /* 2. 브랜드 로고를 중앙(2번)으로 */
+    .logo,
+    .header-logo,
+    h1 {
+        order: 2;
+    }
+
+    /* 3. 쇼핑백 아이콘이 든 left_nav를 제일 오른쪽(3번)으로 */
+    .left_nav {
+        display: block;
+        order: 3;
+    }
+
+    /* 섹션 간격 축소 */
+    .section,
+    .card-section,
+    .footer {
+        margin-top: 160px;
+    }
+
+    /* 메인 슬라이더 높이 조절 */
+    .main-slider {
+        height: 600px;
+    }
+
+
+    /* 3열 카드 -> 2열 세로 배치 */
+    .card-container {
+        flex-wrap: wrap;
+    }
+
+    .card-container .card-item:nth-child(3) {
+        display: none;
+    }
+
+    .card-item {
+        flex: 1 1 calc(50% - 10px);
+        /* 2개씩 나란히 */
+    }
+
+    /* 지금 주목해야 할 것들 -> 1열 세로 레이아웃 */
+    .highlight-grid {
+        display: block;
+        /* flex-direction: column; */
+        height: auto;
+    }
+    .highlight-grid a{
+        display: block;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+
+    .big-banner,
+    .right-banners {
+        display: block;
+        width: 100%;
+        height: 320px;
+    }
+
+    .right-banners {
+        height: auto;
+    }
+
+    .small-banner {
+        height: 200px;
+    }
+
+    /* 브랜드 동그라미 -> 줄바꿈 (5개/3개) */
+    .brand-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 30px;
+    }
+
+    .brand-item {
+        width: calc(20% - 25px);
+        /* 5개씩 배치 */
+    }
+
+    .brand-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* ZARA 2열 배너 높이 조정 */
+    .promo-grid {
+        height: 480px;
+    }
+
+    /* 푸터 레이아웃 조정 (2열씩 배치) */
+    .footer-container {
+        flex-wrap: wrap;
+        gap: 40px 20px;
+    }
+
+    .footer-col {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==========================================
+   2. 모바일 버젼 (max-width: 768px ~ 360px)
+   ========================================== */
+    @media (max-width: 768px) {
+        .hamburger-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger-btn span {
+            width: 18px;
+            height: 2px;
+            background-color: #000;
+        }
+
+
+        /* 섹션 간격 모바일용 축소 */
+        .section,
+        .card-section,
+        .footer {
+            margin-top: 80px;
+            padding: 0 16px;
+        }
+
+        /* 메인 슬라이더 모바일 높이 */
+        .main-slider {
+            height: 500px;
+        }
+
+        /* 모든 카드/배너 -> 1열(100%) 세로로 나열 */
+        .card-container,
+        .promo-grid {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .card-container .card-item:nth-child(3) {
+            display: none;
+        }
+
+        .card-item,
+        .promo-item {
+            width: 100%;
+            height: 380px;
+            /* 모바일 카드 높이 지정 */
+        }
+
+        /* 지금 주목해야 할 것들 모바일 세부 높이 */
+        .big-banner {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .small-banner {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 브랜드 동그라미 -> 3개씩 줄바꿈 */
+        .brand-list {
+            gap: 20px 15px;
+        }
+
+        .brand-item {
+            width: calc(33.33% - 15px);
+            /* 3개씩 배치 */
+        }
+
+        .brand-circle {
+            width: 65px;
+            height: 65px;
+        }
+
+        /* 푸터 -> 1열 풀 세로 정렬 */
+        .footer-container {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-col {
+            width: 50%;
+        }
+    }

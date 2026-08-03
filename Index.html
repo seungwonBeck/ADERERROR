@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main_page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- <header> -->
+    <header>
+        <!-- rigth_nav -->
+        <nav class="rigth_nav">
+            <ul>
+                <li><a href="#">남성</a></li>
+                <li><a href="#">여성</a></li>
+                <li><a href="#">액서서리</a></li>
+                <li><a href="#">콜라보레이션</a></li>
+                <li><a href="#">시그니피컨트</a></li>
+                <li><a href="#">에센스</a></li>
+            </ul>
+        </nav>
+        <!-- rigth_nav -->
+
+        <!-- LOGO -->
+        <h1 class="logo">
+            <a href="#"><img src="./ass/아더에러_정방형1.png" alt="ADER ERROR" height="200"></a>
+        </h1>
+        <!-- LOGO -->
+
+        <!-- left_nav -->
+        <nav class="left_nav">
+            <ul>
+                <li><a href="#">스타일피드</a></li>
+                <li>
+                    <a href="#" class="archive-link">
+                        <span class="blue-block"></span>
+                        <span>Ader Archive</span>
+                    </a>
+                    </a>
+                </li>
+                <li>
+                    <div class="검색">
+                        <button type="button" class="icon-btn" aria-label="검색">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                </li>
+                <li><button type="button" class="icon-btn" aria-label="위시리스트">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button></li>
+
+                <li>
+                    <button type="button" class="icon-btn" aria-label="쇼핑백">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" class="SHOP">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                    </button></li>
+        </nav>
+
+        <button type="button" class="hamburger-btn" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    <!-- </header> -->
+
+    <!-- <main> -->
+    <main>
+        <!-- 메인 비주얼 슬라이더 영역 -->
+        <section class="main-slider">
+            <!-- 슬라이드 이미지 트랙 -->
+            <div class="slider-track">
+                <div class="slide active">
+                    <img src="./ass/웹 메인/23415_371288_1_KOR_20250912161319.png" alt="메인 이미지 1">
+                    <div class="slide-content">
+                        <!-- 텍스트는 자유롭게 수정/추가하세요 -->
+                        <h2>ADER ERROR x 10 CORSO COMO</h2>
+                        <p>아더에러(Ader Error)와 10 꼬르소 꼬모(10 Corso Como)의 협업 컬렉션 및 제품은 SSF샵 아더에러에서 만나보실 수 있습니다.
+                            아더에러만의 유니크한 감성과 10 꼬르소 꼬모의 시그니처 패턴이 결합된 의류와 모자 등 다양한 아이템을 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="image2.jpg" alt="메인 이미지 2">
+                    <div class="slide-content">
+                        <h2>NEW COLLECTION</h2>
+                        <p>새로운 시즌 컬렉션 제품을 확인해보세요.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="image3.jpg" alt="메인 이미지 3">
+                    <div class="slide-content">
+                        <h2>ADER ARCHIVE</h2>
+                        <p>아더에러만의 유니크한 감성을 담은 아카이브입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 좌우 버튼 -->
+            <button type="button" class="slider-btn prev-btn" aria-label="이전 이미지">&lt;</button>
+            <button type="button" class="slider-btn next-btn" aria-label="다음 이미지">&gt;</button>
+
+            <!-- 하단 점(Indicator) 3개 -->
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <div class="card-container">
+
+                <!-- 첫 번째 카드 (SHOP) -->
+                <a href="#" class="card-item">
+                    <img src="./ass/웹 메인/중앙1.jpg" alt="SHOP">
+                    <div class="card-gradient"></div>
+                    <div class="card-text">
+                        <h3>SHOP</h3>
+                        <p>신상품과 전체 컬렉션을 탐색한다.</p>
+                    </div>
+                </a>
+
+                <!-- 두 번째 카드 (Ader Archive) -->
+                <a href="#" class="card-item">
+                    <img src="./ass/웹 메인/중앙2.jpg" alt="Ader Archive">
+                    <div class="card-gradient"></div>
+                    <div class="card-text">
+                        <h3>Ader Archive</h3>
+                        <p>지난 컬렉션과 캠페인 아카이브를 만난다.</p>
+                    </div>
+                </a>
+
+                <!-- 세 번째 카드 (Style Feed) -->
+                <a href="#" class="card-item">
+                    <img src="./ass/웹 메인/중앙3.jpg" alt="Style Feed">
+                    <div class="card-gradient"></div>
+                    <div class="card-text">
+                        <h3>Style Feed</h3>
+                        <p>커뮤니티의 스타일 게시물을 둘러본다.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 1. 지금 주목해야 할 것들 섹션 -->
+        <section class="section highlight-section">
+            <h2 class="section-title">지금 주목해야 할 것들</h2>
+
+            <div class="highlight-grid">
+                <!-- 왼쪽 세로형 큰 배너 -->
+                <a href="#" class="grid-item big-banner">
+                    <img src="./ass/웹 메인/지금주목1.jpg" alt="2026 SS 컬렉션 프리뷰">
+                    <div class="card-gradient"></div>
+                    <div class="banner-text">
+                        <h3>2026 SS 컬렉션 프리뷰</h3>
+                        <p>시즌에 대한 한 걸음 빠른 시선, 새로운 스타일을 만나보세요.</p>
+                    </div>
+                </a>
+
+                <!-- 오른쪽 위/아래 2개 배너 영역 -->
+                <div class="right-banners">
+                    <!-- 오른쪽 위 배너 -->
+                    <a href="#" class="grid-item small-banner">
+                        <img src="./ass/웹 메인/지금주목2.PNG" alt="Ader Archive 히트 상품">
+                        <div class="card-gradient"></div>
+                        <div class="banner-text">
+                            <h3>Ader Archive 히트 상품</h3>
+                            <p>아더에러에서 가장 인기가 많은 아이템들을 한자리에</p>
+                        </div>
+                    </a>
+
+                    <!-- 오른쪽 아래 배너 -->
+                    <a href="#" class="grid-item small-banner">
+                        <img src="./ass/웹 메인/01-cd5478b7-7bcb-4030-a787-64ebee51e1a8.png" alt="스타일 PICK">
+                        <div class="card-gradient"></div>
+                        <div class="banner-text">
+                            <h3>스타일 PICK</h3>
+                            <p>트렌디한 감각과 조화를 이루는 아더에러의 시그니처 룩</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 동그라미 브랜드 로고 리스트 섹션 -->
+        <section class="section brand-section">
+            <div class="brand-list">
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/puma.jpg" alt="Puma"></div>
+                    <span>puma</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/disney.jpg" alt="Disney"></div>
+                    <span>Disney</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/converse.jpg" alt="Converse"></div>
+                    <span>Converse</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/zara.jpg" alt="ZARA"></div>
+                    <span>ZARA</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/casetify.png" alt="CASETiFY"></div>
+                    <span>CASETiFY</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/g-shock.png" alt="G-SHOCK"></div>
+                    <span>G-SHOCK</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/images.png" alt="Maison Kitsuné"></div>
+                    <span>Maison Kitsuné</span>
+                </a>
+                <a href="#" class="brand-item">
+                    <div class="brand-circle"><img src="./ass/웹 메인/콜라보 로고/eastpak.png" alt="EASTPAK"></div>
+                    <span>EASTPAK</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. 하단 2열 배너 (ZARA 콜라보) 섹션 -->
+        <section class="section promo-section">
+            <div class="promo-grid">
+                <a href="#" class="promo-item">
+                    <img src="./ass/웹 메인/자라1.jpg" alt="ZARA 콜라보제품 (남)">
+                    <div class="card-gradient"></div>
+                    <div class="banner-text">
+                        <h3>ZARA 콜라보제품 (남)</h3>
+                        <p>자라 브랜드와의 만남, 리미티드 에디션</p>
+                    </div>
+                </a>
+                <a href="#" class="promo-item">
+                    <img src="./ass/웹 메인/자라2.jpg" alt="ZARA 콜라보제품 (여)">
+                    <div class="card-gradient"></div>
+                    <div class="banner-text">
+                        <h3>ZARA 콜라보제품 (여)</h3>
+                        <p>자라 브랜드와의 만남, 리미티드 에디션</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- </main> -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- 1열: 고객센터 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주 묻는 질문</a></li>
+                    <li><a href="#">문의하기</a></li>
+                    <li class="info-text">전화번호 02-792-2232</li>
+                    <li class="info-text">운영시간 : 오전 09:30 ~ 오후 1:00, 오후 2:00 ~ 5:00 (공휴일 및 휴무일 제외)</li>
+                </ul>
+            </div>
+
+            <!-- 2열: 법적 고지사항 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">법적 고지사항</a></li>
+                    <li><a href="#">온라인 스토어 이용 가이드</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">쿠키 정책</a></li>
+                </ul>
+            </div>
+
+            <!-- 3열: 기업 / 사업자 정보 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">채용 정보</a></li>
+                    <li class="company-info">COMPANY ADER | BUSINESS NAME FIVE SPACE CO.,LTD</li>
+                    <li class="company-info">BUSINESS LICENSE 760-87-01757</li>
+                    <li class="company-info">MAIL-ORDER LICENSE NO. 제 2021-서울성동-01588호 | CEO HANN</li>
+                    <li class="company-info">OFFICE ADER 14, YEONMUJANG 9-GIL, SEONGDONG-GU, SEOUL, KOREA</li>
+                    <li class="copyright">© ADERERROR 2026</li>
+                </ul>
+            </div>
+
+            <!-- 4열: 소셜 미디어 / 언어 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">소셜 미디어</a></li>
+                    <li><a href="#">언어</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
