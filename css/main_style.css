@@ -51,7 +51,7 @@ header {
     z-index: 9999;
 }
 
-header .rigth_nav ul {
+header .right_nav ul {
     display: flex;
     gap: 40px;
     font-size: 12px;
@@ -622,7 +622,7 @@ header .left_nav ul {
 @media (max-width: 1024px) {
 
     /* 헤더: 메뉴 숨김 처리 예시 (햄버거 메뉴용) */
-    .rigth_nav,
+    .right_nav,
     .left_nav {
         display: none;
         /* 필요시 햄버거 버튼만 보이도록 처리 */
@@ -694,10 +694,6 @@ header .left_nav ul {
     /* 3열 카드 -> 2열 세로 배치 */
     .card-container {
         flex-wrap: wrap;
-    }
-
-    .card-container .card-item:nth-child(3) {
-        display: none;
     }
 
     .card-item {
@@ -831,10 +827,6 @@ header .left_nav ul {
         height: auto;
     }
 
-    .card-container .card-item:nth-child(3) {
-        display: none;
-    }
-
     .card-item,
     .promo-item {
         width: 100%;
@@ -879,4 +871,341 @@ header .left_nav ul {
     .footer-col {
         width: 50%;
     }
+}
+
+
+/* ============================================================
+   MAIN PAGE MOTION & REFINED LAYOUT
+   ============================================================ */
+@keyframes mainFadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mainHeroZoom {
+    from { transform: scale(1.04); }
+    to { transform: scale(1); }
+}
+
+.slide.active img {
+    animation: mainHeroZoom 1.5s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.slide-content {
+    animation: mainFadeUp .9s .2s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.card-item {
+    animation: mainFadeUp .75s cubic-bezier(.22, 1, .36, 1) backwards;
+    transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s ease;
+}
+
+.card-item:nth-child(1) { animation-delay: .08s; }
+.card-item:nth-child(2) { animation-delay: .16s; }
+.card-item:nth-child(3) { animation-delay: .24s; }
+.card-item:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,.12); }
+
+.highlight-section,
+.brand-section,
+.promo-section {
+    animation: mainFadeUp .8s cubic-bezier(.22, 1, .36, 1) backwards;
+}
+
+/* 왼쪽은 화면 중심까지 채우고 오른쪽은 대각선 비대칭 배치 */
+.highlight-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 58%) minmax(0, 42%);
+    gap: 0;
+    height: clamp(500px, 42vw, 720px);
+}
+
+.big-banner {
+    width: 100%;
+    height: 100%;
+}
+
+.big-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.right-banners {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.right-banners .small-banner {
+    position: absolute;
+    width: 52%;
+    height: 52%;
+    margin: 0;
+    border: 1px solid #c9c9c9;
+    background: #f7f7f7;
+    z-index: 1;
+    transition: width .6s cubic-bezier(.22, 1, .36, 1),
+                box-shadow .35s ease;
+}
+
+.right-banners .small-banner:first-child { top: 0; left: 0; }
+.right-banners .small-banner:last-child { right: 0; bottom: 0; }
+
+.right-banners .small-banner:hover {
+    width: 76%;
+    z-index: 3;
+    box-shadow: 0 16px 40px rgba(0,0,0,.14);
+}
+
+.right-banners .small-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.brand-item {
+    transition: color .25s ease, transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.brand-item:hover { color: #111; transform: translateY(-7px); }
+
+.brand-circle {
+    transition: border-color .25s, box-shadow .3s ease, transform .3s ease;
+}
+
+.brand-item:hover .brand-circle {
+    box-shadow: 0 10px 24px rgba(0,0,255,.10);
+    transform: scale(1.05);
+}
+
+/* 마지막 이미지는 전체 폭으로 펼치고 푸터와 바로 연결 */
+.promo-section {
+    max-width: none;
+    padding: 0;
+}
+
+.promo-grid a img {
+    transition: transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.promo-item:hover img { transform: scale(1.035); }
+
+.promo-section + .footer,
+.footer {
+    margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+    .highlight-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 20px;
+    }
+
+    .big-banner { height: 460px; }
+
+    .right-banners {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        height: 300px;
+    }
+
+    .right-banners .small-banner,
+    .right-banners .small-banner:first-child,
+    .right-banners .small-banner:last-child {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .right-banners .small-banner:hover { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .big-banner { height: 360px; }
+
+    .right-banners {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .right-banners .small-banner { min-height: 280px; }
+    .promo-section { padding: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* 요청 반영: 슬라이더 텍스트 중앙 / 우측 배너 반반 / 프로모션 무간격 */
+@keyframes slideTextCenterIn {
+    from { opacity: 0; transform: translate(-50%, 28px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.slide-content {
+    left: 50%;
+    right: auto;
+    width: min(80%, 800px);
+    text-align: center;
+    transform: translateX(-50%);
+    animation: slideTextCenterIn .9s .2s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+/* 오른쪽 영역을 위·아래 정확히 50%로 나눠 겹침 제거 */
+.right-banners .small-banner,
+.right-banners .small-banner:first-child,
+.right-banners .small-banner:last-child {
+    position: absolute;
+    left: 0;
+    right: auto;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    box-shadow: none;
+}
+
+.right-banners .small-banner:first-child { top: 0; bottom: auto; }
+.right-banners .small-banner:last-child { top: 50%; bottom: auto; }
+
+.right-banners .small-banner:hover {
+    width: 100%;
+    box-shadow: none;
+}
+
+/* 마지막 두 이미지를 틈 없이 연결 */
+.promo-grid { gap: 0; }
+
+@media (max-width: 1024px) {
+    .right-banners {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .right-banners .small-banner,
+    .right-banners .small-banner:first-child,
+    .right-banners .small-banner:last-child {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-banners { grid-template-columns: 1fr; }
+}
+
+
+/* 오른쪽 배너: 기본은 대각선 50%, 영역 호버 시 가로 전체로 확장 */
+.highlight-grid { column-gap: 0; }
+
+.big-banner,
+.right-banners,
+.right-banners .small-banner {
+    border: 0;
+    outline: 0;
+}
+
+.right-banners .small-banner,
+.right-banners .small-banner:first-child,
+.right-banners .small-banner:last-child {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    border: 0;
+    transition: width .65s cubic-bezier(.22, 1, .36, 1),
+                box-shadow .35s ease;
+}
+
+.right-banners .small-banner:first-child {
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+}
+
+.right-banners .small-banner:last-child {
+    top: 50%;
+    left: auto;
+    right: 0;
+    bottom: auto;
+}
+
+.right-banners:hover .small-banner,
+.right-banners .small-banner:hover {
+    width: 100%;
+    box-shadow: none;
+}
+
+/* 제목은 두 번째 레퍼런스처럼 한글 제목만 왼쪽에 표시 */
+.highlight-section .section-title {
+    margin: 0 0 24px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    color: #111;
+}
+
+/* 마지막 비주얼과 푸터를 제외한 모든 메인 섹션 간격은 160px 고정 */
+.main-slider + .card-section,
+.card-section + .section,
+.main-slider ~ .section + .section {
+    margin-top: 160px;
+}
+
+.promo-section { margin-top: 160px; }
+.promo-section + .footer,
+.footer { margin-top: 0; }
+
+@media (max-width: 1024px) {
+    .right-banners .small-banner,
+    .right-banners .small-banner:first-child,
+    .right-banners .small-banner:last-child {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* 최종 반응형 섹션 간격: 태블릿 180px / 모바일 80px */
+@media (max-width: 1024px) {
+    .main-slider + .card-section,
+    .card-section + .section,
+    .main-slider ~ .section + .section,
+    .promo-section {
+        margin-top: 180px;
+    }
+
+    .footer { margin-top: 0; }
+}
+
+@media (max-width: 768px) {
+    .main-slider + .card-section,
+    .card-section + .section,
+    .main-slider ~ .section + .section,
+    .promo-section {
+        margin-top: 80px;
+    }
+
+    .footer { margin-top: 0; }
 }

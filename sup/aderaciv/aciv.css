@@ -78,7 +78,7 @@ header {
     z-index: 9999;
 }
 
-header .rigth_nav ul {
+header .right_nav ul {
     display: flex;
     gap: 40px;
     font-size: 12px;
@@ -236,7 +236,7 @@ header .left_nav ul {
   line-height: 1.65;
   opacity: 1;
   animation: archiveFadeUp .65s cubic-bezier(.22, 1, .36, 1) backwards;
-  margin: 160px 0;
+  margin: 0;
   transition: color .25s ease, transform .3s ease;
 }
 
@@ -565,7 +565,7 @@ header .left_nav ul {
     .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 70px; }
 
     /* 헤더: 메뉴 숨김 처리 예시 (햄버거 메뉴용) */
-    .rigth_nav,
+    .right_nav,
     .left_nav {
         display: none;
         /* 필요시 햄버거 버튼만 보이도록 처리 */
@@ -845,5 +845,175 @@ header .left_nav ul {
 
     .footer-col {
         width: 50%;
+    }
+}
+
+
+/* ============================================================
+   ARCHIVE RESPONSIVE - TABLET / MOBILE FINAL
+   ============================================================ */
+@media (max-width: 1024px) {
+    /* 태블릿 섹션 간격 */
+    .archive-tabs,
+    .archive-products-head,
+    .footer {
+        --archive-section-gap: 180px;
+    }
+
+    .archive-hero {
+        --hero-title-overhang: 68px;
+        height: 620px;
+        min-height: 0;
+    }
+
+    .archive-hero-title {
+        bottom: -.42em;
+        font-size: clamp(72px, 10vw, 102px);
+    }
+
+    .archive-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        min-height: 360px;
+        padding: 160px 28px 80px;
+    }
+
+    .archive-tab { min-width: 0; }
+
+    .archive-banner {
+        grid-template-columns: repeat(3, 1fr);
+        height: 400px;
+    }
+
+    .archive-intro {
+        min-height: 620px;
+        padding: 150px 20px 90px;
+    }
+
+    .archive-intro .archive-link { margin-top: 100px; }
+
+    .archive-products-head {
+        margin-top: 180px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 90px 34px;
+    }
+
+    .product-card > .ph-img {
+        height: 54vw;
+    }
+
+    .footer { margin-top: 180px; }
+}
+
+@media (max-width: 768px) {
+    header { height: 60px; }
+
+    .archive-hero {
+        --hero-title-overhang: 64px;
+        height: 235px;
+        min-height: 0;
+        padding-top: 60px;
+    }
+
+    .archive-hero-title {
+        bottom: -.98em;
+        width: 330px;
+        max-width: 92vw;
+        white-space: normal;
+        text-align: center;
+        font-size: clamp(45px, 14vw, 54px);
+        line-height: .82;
+        letter-spacing: -.055em;
+    }
+
+    .archive-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: auto;
+        height: auto;
+        padding: 80px 18px;
+        gap: 34px 12px;
+        align-content: start;
+    }
+
+    .archive-tab { margin: 0; font-size: 9px; }
+    .archive-tab-icon { width: 32px; height: 32px; }
+
+    /* 모바일 시안은 가운데 캠페인 비주얼만 크게 노출 */
+    .archive-banner {
+        display: block;
+        height: 200px;
+        margin: 0;
+    }
+
+    .archive-banner > .ph-img:first-child,
+    .archive-banner > .ph-img:nth-child(3) {
+        display: none;
+    }
+
+    .archive-banner > .ph-img:nth-child(2) {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .archive-banner > .ph-img:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 28%;
+    }
+
+    .archive-intro {
+        min-height: 390px;
+        padding: 70px 16px 50px;
+    }
+
+    .archive-intro h3 { font-size: 14px; }
+    .archive-intro h4 { margin-bottom: 30px; font-size: 11px; }
+    .archive-intro p { font-size: 8px; line-height: 1.8; }
+    .archive-intro .archive-link { margin-top: 55px; font-size: 9px; }
+
+    .archive-products-head {
+        margin-top: 80px;
+        padding: 0 16px 20px;
+        font-size: 8px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        padding: 0 16px 30px;
+    }
+
+    .product-card > .ph-img {
+        height: 92vw;
+        margin-bottom: 18px;
+    }
+
+    .product-name { font-size: 12px; }
+    .product-price { position: absolute; top: calc(92vw + 20px); right: 0; }
+
+    .footer {
+        margin-top: 80px;
+        padding: 35px 10px 45px;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .footer-col { width: auto; min-width: 0; }
+    .footer-col ul { padding: 0; }
+    .footer-col li,
+    .footer-col .company-info,
+    .footer-col .copyright {
+        font-size: 5px;
+        line-height: 2.4;
     }
 }
