@@ -672,13 +672,21 @@ header .logo img {
 
     .feed-filter {
         padding: 0 16px 80px;
-        display: block;
-        overflow-x: auto
+        display: flex;
+        justify-content: center;
+        overflow: visible
     }
 
     .filter-buttons {
-        width: max-content;
-        gap: 18px
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px
+    }
+
+    .filter-buttons button:not(.search) {
+        padding: 8px;
+        font-size: 12px
     }
 
     .more {
