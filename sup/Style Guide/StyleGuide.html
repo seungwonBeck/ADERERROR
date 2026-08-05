@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>styleGuide</title>
+    <link rel="stylesheet" href="./styleGuide.css">
+</head>
+
+<body>
+    <!-- <header> -->
+    <header>
+        <!-- right_nav -->
+        <nav class="right_nav">
+            <ul>
+                <li><a href="#">남성</a></li>
+                <li><a href="#">여성</a></li>
+                <li><a href="#">액세서리</a></li>
+                <li><a href="#">콜라보레이션</a></li>
+                <li><a href="#">시그니피컨트</a></li>
+                <li><a href="#">에센스</a></li>
+            </ul>
+        </nav>
+        <!-- right_nav -->
+
+        <!-- LOGO -->
+        <h1 class="logo">
+            <a href="../../Index.html"><img src="./img/logo.png" alt="ADER ERROR" height="200"></a>
+        </h1>
+        <!-- LOGO -->
+
+        <!-- left_nav -->
+        <nav class="left_nav">
+            <ul>
+                <li><a href="#">스타일피드</a></li>
+                <li>
+                    <a href="#" class="archive-link">
+                        <span class="blue-block"></span>
+                        <span>Ader Archive</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="search">
+                        <button type="button" class="icon-btn" aria-label="검색">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+                <li><button type="button" class="icon-btn" aria-label="위시리스트">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button></li>
+
+                <li>
+                    <button type="button" class="icon-btn" aria-label="쇼핑백">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" class="SHOP">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <button type="button" class="hamburger-btn" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+    <!-- </header> -->
+
+    <!-- <main> -->
+    <main>
+        <section class="feed-intro">
+            <h2>스타일 피드</h2>
+            <p>아더에러만의 스타일 가이드 및 상품들을 직접 확인해보세요.</p>
+            <div class="gender-tabs"><button class="active" type="button">남성</button><button type="button">여성</button>
+            </div>
+        </section>
+
+        <section class="feed-filter" aria-label="게시물 필터">
+            <div class="filter-buttons"><button class="active" type="button">스타일</button><button
+                    type="button">룩북</button><button type="button">가이드</button><button type="button">인터뷰</button><button
+                    type="button">체험형</button><button class="search" type="button" aria-label="검색"><svg width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg></button></div>
+            <a class="more" href="#">더보기</a>
+        </section>
+
+        <section class="feed-grid" aria-label="스타일 피드 목록">
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/1.jpg" alt="1"></div>
+                <div class="card-copy"><small>스타일 피드</small>
+                    <h3>지금 대세는 크롭한 반팔 및 레이어드 티</h3>
+                    <p>대세적인 티 레이어드 컨셉으로 입어보면 어떨까요?</p>
+                    <div class="meta"><time>2026. 07. 13</time><span class="likes">2,000</span><span class="comments">30</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/2.jpg" alt="2"></div>
+                <div class="card-copy"><small>룩북</small>
+                    <h3>아더에러 슬링 백으로 완성하는 시티보이 룩</h3>
+                    <p>무심하게 툭 걸쳐 매는 가방 하나로 달라지는 실루엣.</p>
+                    <div class="meta"><time>2026. 02. 21</time><span class="likes">1,284</span><span class="comments">18</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/3.jpg" alt="3"></div>
+                <div class="card-copy"><small>스타일 피드</small>
+                    <h3>와이드 데님 팬츠를 활용한 트렌디 셋업</h3>
+                    <p>일상적이면서도 감각적인 와이드 핏 연출법을 확인하세요.</p>
+                    <div class="meta"><time>2026. 03. 09</time><span class="likes">3,517</span><span class="comments">42</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/4.jpg" alt="4"></div>
+                <div class="card-copy"><small>스타일 피드</small>
+                    <h3>미니멀리즘 셔츠와 테일러드 쇼츠의 조화</h3>
+                    <p>클래식한 셔츠를 가장 캐주얼하게 즐기는 스타일링 공식.</p>
+                    <div class="meta"><time>2026. 04. 18</time><span class="likes">956</span><span class="comments">11</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/5.png" alt="6"></div>
+                <div class="card-copy"><small>가이드</small>
+                    <h3>시그니처 블루 포인트를 살린 에센셜 코디</h3>
+                    <p>룩의 완성도를 높여주는 아더에러만의 컬러 포인트 팁.</p>
+                    <div class="meta"><time>2026. 05. 27</time><span class="likes">4,208</span><span class="comments">56</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/6.jpg" alt="7"></div>
+                <div class="card-copy"><small>체험형</small>
+                    <h3>여름철 가벼운 바람막이 아우터 레이어링</h3>
+                    <p>실내외 기온차와 스타일을 모두 잡는 기능성 피드입니다.</p>
+                    <div class="meta"><time>2026. 06. 11</time><span class="likes">2,763</span><span class="comments">35</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/7.jpg" alt="8"></div>
+                <div class="card-copy"><small>스타일 피드</small>
+                    <h3>볼캡과 스니커즈로 더하는 스트리트 감성</h3>
+                    <p>평범한 룩에 위트를 더하는 액세서리 매치 매뉴얼.</p>
+                    <div class="meta"><time>2026. 08. 04</time><span class="likes">1,692</span><span class="comments">24</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/8.jpg" alt="9"></div>
+                <div class="card-copy"><small>스타일 피드</small>
+                    <h3>니트 베스트를 매치한 감각적인 남성 룩</h3>
+                    <p>단조로운 여름 코디에 입체감을 불어넣는 레이어드.</p>
+                    <div class="meta"><time>2026. 09. 16</time><span class="likes">5,031</span><span class="comments">68</span></div>
+                </div>
+            </article>
+            <article class="feed-card">
+                <div class="image-slot"><img src="./img/10.jpg" alt="10"></div>
+                <div class="card-copy"><small>인터뷰</small>
+                    <h3>젠더리스 룩으로 제안하는 오버핏 재킷</h3>
+                    <p>경계를 허무는 실루엣, 성별 상관없이 즐기는 아더 핏.</p>
+                    <div class="meta"><time>2026. 11. 02</time><span class="likes">3,846</span><span class="comments">47</span></div>
+                </div>
+            </article>
+        </section>
+
+        <nav class="pagination" aria-label="페이지 이동"><a href="#">‹</a><a class="active" href="#">[1]</a><a
+                href="#">[2]</a><a href="#">[3]</a><a href="#">[4]</a><a href="#">[5]</a><a href="#">›</a></nav>
+    </main>
+    <!-- </main> -->
+
+
+    <!-- <footer> -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- 1열: 고객센터 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주 묻는 질문</a></li>
+                    <li><a href="#">문의하기</a></li>
+                    <li class="info-text">전화번호 02-792-2232</li>
+                    <li class="info-text">운영시간 : 오전 09:30 ~ 오후 1:00, 오후 2:00 ~ 5:00 (공휴일 및 휴무일 제외)</li>
+                </ul>
+            </div>
+
+            <!-- 2열: 법적 고지사항 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">법적 고지사항</a></li>
+                    <li><a href="#">온라인 스토어 이용 가이드</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">쿠키 정책</a></li>
+                </ul>
+            </div>
+
+            <!-- 3열: 기업 / 사업자 정보 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">채용 정보</a></li>
+                    <li class="company-info">COMPANY ADER | BUSINESS NAME FIVE SPACE CO.,LTD</li>
+                    <li class="company-info">BUSINESS LICENSE 760-87-01757</li>
+                    <li class="company-info">MAIL-ORDER LICENSE NO. 제 2021-서울성동-01588호 | CEO HANN</li>
+                    <li class="company-info">OFFICE ADER 14, YEONMUJANG 9-GIL, SEONGDONG-GU, SEOUL, KOREA</li>
+                    <li class="copyright">© ADERERROR 2026</li>
+                </ul>
+            </div>
+
+            <!-- 4열: 소셜 미디어 / 언어 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">소셜 미디어</a></li>
+                    <li><a href="#">언어</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+    <!-- <footer> -->
+
+</body>
+
+</html>

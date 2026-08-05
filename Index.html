@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main_page</title>
-    <link rel="stylesheet" href="./css/main_style.css?v=20260804-final">
+    <link rel="stylesheet" href="./css/main_style.css?v=20260805-gradient">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 
         <!-- LOGO -->
         <h1 class="logo">
-            <a href="#"><img src="./image/index_img/logo.png" alt="ADER ERROR" height="200"></a>
+            <a href="./Index.html"><img src="./image/index_img/logo.png" alt="ADER ERROR" height="200"></a>
         </h1>
         <!-- LOGO -->
 
@@ -68,7 +68,8 @@
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                             <path d="M16 10a4 4 0 0 1-8 0"></path>
                         </svg>
-                    </button></li>
+                    </button>
+                </li>
             </ul>
         </nav>
 
@@ -87,23 +88,26 @@
             <!-- 슬라이드 이미지 트랙 -->
             <div class="slider-track">
                 <div class="slide active">
-                    <img src="./image/index_img/main1.png">
+                    <video class="main-visual-video" autoplay muted loop playsinline preload="auto"
+                        poster="./image/index_img/main1.png" aria-label="ADERERROR 메인 컬렉션 영상">
+                        <source src="./video/2.mp4" type="video/mp4">
+                        브라우저가 비디오 재생을 지원하지 않습니다.
+                    </video>
                     <div class="slide-content">
                         <!-- 텍스트는 자유롭게 수정/추가하세요 -->
-                        <h2>ADER ERROR x 10 CORSO COMO</h2>
-                        <p>아더에러(Ader Error)와 10 꼬르소 꼬모(10 Corso Como)의 협업 컬렉션 및 제품은 SSF샵 아더에러에서 만나보실 수 있습니다.
-                            아더에러만의 유니크한 감성과 10 꼬르소 꼬모의 시그니처 패턴이 결합된 의류와 모자 등 다양한 아이템을 제공합니다.</p>
+                        <h2>Poetic Project</h2>
+                        <p>아더에러의 ‘포에틱 프로젝트’는 브랜드 캠페인의 경계를 넘어, 서사적인 크리에이티브를 통해 아티스트의 스펙트럼을 확장하고 청춘을 다층적으로 그려내는 예술 프로젝트입니다.</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="image2.jpg" alt="메인 이미지 2">
+                    <img src="./image/index_img/PP_carousel_3.jpg" alt="메인 이미지 2">
                     <div class="slide-content">
                         <h2>NEW COLLECTION</h2>
                         <p>새로운 시즌 컬렉션 제품을 확인해보세요.</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="image3.jpg" alt="메인 이미지 3">
+                    <img src="./image/index_img/index_01.jpg" alt="메인 이미지 3">
                     <div class="slide-content">
                         <h2>ADER ARCHIVE</h2>
                         <p>아더에러만의 유니크한 감성을 담은 아카이브입니다.</p>
@@ -127,7 +131,7 @@
             <div class="card-container">
 
                 <!-- 첫 번째 카드 (SHOP) -->
-                <a href="#" class="card-item">
+                <a href="./sup/shop/shop-tshirt.html" class="card-item">
                     <img src="./image/index_img/space_01.jpg" alt="SHOP">
                     <div class="card-gradient"></div>
                     <div class="card-text">
@@ -137,7 +141,7 @@
                 </a>
 
                 <!-- 두 번째 카드 (Ader Archive) -->
-                <a href="#" class="card-item">
+                <a href="./sup/aderaciv/aderaciv.html" class="card-item">
                     <img src="./image/index_img/space_02.jpg" alt="Ader Archive">
                     <div class="card-gradient"></div>
                     <div class="card-text">
@@ -147,7 +151,7 @@
                 </a>
 
                 <!-- 세 번째 카드 (Style Feed) -->
-                <a href="#" class="card-item">
+                <a href="./sup/Style Guide/StyleGuide.html" class="card-item">
                     <img src="./image/index_img/space_03.jfif" alt="Style Feed">
                     <div class="card-gradient"></div>
                     <div class="card-text">
@@ -227,7 +231,8 @@
                     <span>G-SHOCK</span>
                 </a>
                 <a href="#" class="brand-item b7">
-                    <div class="brand-circle"><img src="./image/index_img/logo/maison-kitsune-logo.png" alt="Maison Kitsuné"></div>
+                    <div class="brand-circle"><img src="./image/index_img/logo/maison-kitsune-logo.png"
+                            alt="Maison Kitsuné"></div>
                     <span>Maison Kitsuné</span>
                 </a>
                 <a href="#" class="brand-item b8">
@@ -260,6 +265,8 @@
         </section>
     </main>
     <!-- </main> -->
+
+    <!-- <footer> -->
     <footer class="footer">
         <div class="footer-container">
 
@@ -308,6 +315,7 @@
 
         </div>
     </footer>
+    <!-- <footer> -->
 </body>
 
 </html>

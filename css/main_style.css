@@ -65,6 +65,12 @@ header .logo {
     transform: translateX(-50%)
 }
 
+header .logo img {
+    width: 170px;
+    height: 42px;
+    object-fit: cover;
+}
+
 header .left_nav ul {
     display: flex;
     gap: 40px;
@@ -161,12 +167,25 @@ header .left_nav ul {
     z-index: 1;
 }
 
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(to bottom, rgba(5, 9, 16, 0) 0%, rgba(5, 9, 16, .08) 52%, rgba(5, 9, 16, .42) 100%),
+        radial-gradient(circle at 50% 72%, rgba(0, 0, 0, .18), transparent 46%);
+}
+
 /* 이미지 비율 및 채우기 */
-.slide img {
+.slide img,
+.slide video {
     width: 100%;
     height: 100%;
     object-position: top;
     object-fit: cover;
+    display: block;
     /* 영역에 맞게 자연스럽게 꽉 채움 */
 }
 
@@ -181,6 +200,7 @@ header .left_nav ul {
     z-index: 2;
     width: 80%;
     max-width: 800px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .75);
 }
 
 .slide-content h2 {
@@ -193,7 +213,8 @@ header .left_nav ul {
 .slide-content p {
     font-size: 13px;
     line-height: 1.6;
-    opacity: 0.7;
+    color: rgba(255, 255, 255, .9);
+    opacity: 1;
 }
 
 /* 좌우 화살표 버튼 */
@@ -250,7 +271,6 @@ header .left_nav ul {
 
 /* 메인 이미지칸  */
 
-/* 카드 섹션 전체 영역 (위 슬라이더와의 간격 160px) */
 .card-section {
     width: 100%;
     margin-top: 160px;
@@ -258,44 +278,35 @@ header .left_nav ul {
     /* 화면 양옆 여백 */
 }
 
-/* 3열 가로 정렬 컨테이너 */
 .card-container {
     display: flex;
     gap: 20px;
-    /* 카드 사이 간격 */
     max-width: 1880px;
-    /* 필요에 따라 전체 최대 너비 조절 */
     margin: 0 auto;
 }
 
-/* 개별 카드 링크 박스 */
 .card-item {
     position: relative;
     flex: 1;
-    /* 3개의 카드가 동일한 너비를 가짐 */
     aspect-ratio: 1 / 1;
-    /* 정사각형 비율 (필요시 height 지정으로 변경 가능) */
     overflow: hidden;
     text-decoration: none;
     display: block;
 }
 
-/* 카드 이미지 */
+
 .card-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
-    /* 호버 시 약간 확대되는 효과 (선택사항) */
 }
 
-/* 마우스 올렸을 때 이미지 살짝 확대 (원치 않으시면 삭제 가능) */
 .card-item:hover img {
     transform: scale(1.05);
 }
 
-/* 아래에서 위로 올라오는 그라데이션 오버레이 */
 .card-gradient {
     position: absolute;
     top: 0;
@@ -418,6 +429,7 @@ header .left_nav ul {
 /* ==========================================
    1. 지금 주목해야 할 것들 (그리드 레이아웃)
    ========================================== */
+
 .highlight-grid {
     display: flex;
     max-width: 1880px;
@@ -452,6 +464,7 @@ header .left_nav ul {
 /* ==========================================
    2. 동그라미 브랜드 로고 리스트
    ========================================== */
+
 .brand-list {
     display: flex;
     justify-content: space-between;
@@ -495,6 +508,7 @@ header .left_nav ul {
 /* ==========================================
    3. 하단 2열 배너 (ZARA)
    ========================================== */
+
 .promo-grid {
     display: flex;
     gap: 20px;
@@ -791,6 +805,11 @@ header .left_nav ul {
    2. 모바일 버젼 (max-width: 768px ~ 360px)
    ========================================== */
 @media (max-width: 768px) {
+    header .logo img {
+        width: 130px;
+        height: 34px;
+    }
+
     .hamburger-btn {
         display: flex;
         flex-direction: column;
@@ -887,7 +906,8 @@ header .left_nav ul {
     to { transform: scale(1); }
 }
 
-.slide.active img {
+.slide.active img,
+.slide.active video {
     animation: mainHeroZoom 1.5s cubic-bezier(.22, 1, .36, 1) both;
 }
 
