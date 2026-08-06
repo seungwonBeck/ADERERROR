@@ -92,6 +92,13 @@ header .logo {
     transform: translateX(-50%)
 }
 
+.logo img {
+  width: 170px;
+  height: 42px;
+  object-fit: cover;
+}
+
+
 header .left_nav ul {
     display: flex;
     gap: 40px;
