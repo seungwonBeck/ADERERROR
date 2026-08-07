@@ -494,6 +494,29 @@ header .left_nav ul {
    2. 동그라미 브랜드 로고 리스트
    ========================================== */
 
+.brand-heading {
+    margin-bottom: 56px;
+    text-align: center;
+}
+
+.brand-heading h2 {
+    margin: 0;
+    color: #111;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.brand-heading p {
+    margin: 14px 0 0;
+    color: #111;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+}
+
 .brand-list {
     display: flex;
     justify-content: space-between;
@@ -1257,4 +1280,23 @@ header .left_nav ul {
     }
 
     .footer { margin-top: 0; }
+}
+
+@media (max-width: 768px) {
+    .brand-heading {
+        margin-bottom: 36px;
+        padding: 0 12px;
+    }
+
+    .brand-heading h2 {
+        font-size: 36px;
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+    }
+
+    .brand-heading p {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
 }
