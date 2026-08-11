@@ -306,7 +306,8 @@ header .left_nav ul {
 }
 
 .archive-banner > .ph-img img {
-  transition: transform .8s cubic-bezier(.22, 1, .36, 1);
+  transition: transform .8s cubic-bezier(.22, 1, .36, 1),
+              filter .8s cubic-bezier(.22, 1, .36, 1);
 }
 
 .archive-banner > .ph-img:hover img { transform: scale(1.035); }
@@ -342,7 +343,7 @@ header .left_nav ul {
 }
 
 .archive-banner > .ph-img:nth-child(3):hover img {
-  transform: translateY(-25%) scale(1.025);
+  transform: translateY(-25%) scale(1.035);
 }
 
 .archive-banner-caption {
@@ -402,7 +403,12 @@ header .left_nav ul {
   padding: 0 34px 60px;
 }
 
-.product-card { position: relative; min-width: 0; font-size: 12px; }
+.product-card {
+  --product-image-height: clamp(300px, 31vw, 560px);
+  position: relative;
+  min-width: 0;
+  font-size: 12px;
+}
 .product-card {
   opacity: 1;
   animation: archiveFadeUp .7s cubic-bezier(.22, 1, .36, 1) backwards;
@@ -414,7 +420,7 @@ header .left_nav ul {
 .product-card:nth-child(4) { animation-delay: .32s; }
 .product-card:hover { transform: translateY(-8px); }
 .product-card > .ph-img {
-  height: clamp(300px, 31vw, 560px);
+  height: var(--product-image-height);
   margin-bottom: 32px;
   display: grid;
   place-items: center;
@@ -430,7 +436,7 @@ header .left_nav ul {
 }
 .product-card:hover > .ph-img img { transform: scale(1.035); }
 .product-name { font-size: 15px; font-weight: 700; padding-right: 80px; margin-bottom: 20px; }
-.product-price { position: absolute; right: 0; top: calc(clamp(300px, 31vw, 560px) + 34px); font-weight: 600; }
+.product-price { position: absolute; right: 0; top: calc(var(--product-image-height) + 34px); font-weight: 600; }
 .product-meta { display: flex; align-items: center; min-height: 25px; font-size: 11px; font-weight: 600; }
 .swatches, .sizes { display: inline-flex; align-items: center; gap: 28px; margin-left: 30px; }
 .swatch { width: 13px; height: 13px; border-radius: 50%; border: 1px solid #aaa; }
@@ -909,11 +915,28 @@ header .left_nav ul {
         gap: 90px 34px;
     }
 
-    .product-card > .ph-img {
-        height: 54vw;
+    .footer { margin-top: 180px; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* 1024px을 포함한 태블릿에서는 세 사진의 기본 구도와 효과를 통일 */
+    .archive-banner > .ph-img:nth-child(1) img,
+    .archive-banner > .ph-img:nth-child(2) img,
+    .archive-banner > .ph-img:nth-child(3) img {
+        object-position: center;
+        transform: scale(1.02);
+        filter: brightness(.98) contrast(.98);
     }
 
-    .footer { margin-top: 180px; }
+    .archive-banner > .ph-img:nth-child(1):hover img,
+    .archive-banner > .ph-img:nth-child(2):hover img,
+    .archive-banner > .ph-img:nth-child(3):hover img {
+        transform: scale(1.055);
+        filter: brightness(.9) contrast(.98);
+    }
+
+    .product-card { --product-image-height: 54vw; }
+    .product-card > .ph-img img { object-fit: cover; }
 }
 
 @media (max-width: 768px) {
@@ -953,7 +976,8 @@ header .left_nav ul {
     /* 모바일 시안은 가운데 캠페인 비주얼만 크게 노출 */
     .archive-banner {
         display: block;
-        height: 200px;
+        /* 첫 번째 시안과 같은 약 2.27:1 비율로 얼굴과 어깨까지 노출 */
+        height: clamp(200px, 44vw, 338px);
         margin: 0;
     }
 
@@ -972,7 +996,8 @@ header .left_nav ul {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 28%;
+        /* 가로로 긴 배너에서도 인물의 얼굴이 잘리지 않도록 상단에 초점 */
+        object-position: top;
     }
 
     .archive-intro {
