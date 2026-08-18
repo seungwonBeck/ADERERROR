@@ -3,9 +3,7 @@ $(function () {
     const $slides = $slider.find('.slide');
     const $dots = $slider.find('.dot');
     const slideCount = $slides.length;
-    const autoplayDelay = 5000;
     let currentIndex = 0;
-    let autoplayTimer = null;
     let touchStartX = 0;
 
     if (slideCount < 2) return;
@@ -37,33 +35,16 @@ $(function () {
         });
     }
 
-    function stopAutoplay() {
-        window.clearInterval(autoplayTimer);
-        autoplayTimer = null;
-    }
-
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayTimer = window.setInterval(function () {
-            changeSlide(currentIndex + 1);
-        }, autoplayDelay);
-    }
-
-    function moveAndRestart(nextIndex) {
-        changeSlide(nextIndex);
-        startAutoplay();
-    }
-
     $slider.find('.next-btn').on('click', function () {
-        moveAndRestart(currentIndex + 1);
+        changeSlide(currentIndex + 1);
     });
 
     $slider.find('.prev-btn').on('click', function () {
-        moveAndRestart(currentIndex - 1);
+        changeSlide(currentIndex - 1);
     });
 
     $dots.on('click', function () {
-        moveAndRestart($(this).index());
+        changeSlide($(this).index());
     }).on('keydown', function (event) {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
@@ -71,12 +52,8 @@ $(function () {
         }
     });
 
-    $slider.on('mouseenter focusin', stopAutoplay);
-    $slider.on('mouseleave focusout', startAutoplay);
-
     $slider.on('touchstart', function (event) {
         touchStartX = event.originalEvent.touches[0].clientX;
-        stopAutoplay();
     });
 
     $slider.on('touchend', function (event) {
@@ -86,9 +63,7 @@ $(function () {
         if (Math.abs(distance) > 50) {
             changeSlide(currentIndex + (distance < 0 ? 1 : -1));
         }
-        startAutoplay();
     });
 
     changeSlide(0);
-    startAutoplay();
 });

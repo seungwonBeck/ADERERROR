@@ -188,6 +188,13 @@ header .left_nav ul {
     margin-top: 80px;
 }
 
+.main-slide-placeholder {
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+    background-color: #2a2a2a;
+}
+
 /* 이미지 위 텍스트 오버레이 */
 .slide-content {
     position: absolute;
@@ -203,10 +210,10 @@ header .left_nav ul {
 }
 
 .slide-content h2 {
-    font-size: clamp(28px, 3vw, 42px);
+    font-size: clamp(22px, 2.2vw, 32px);
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     letter-spacing: -.02em;
     min-height: 1.2em;
     display: flex;
@@ -214,17 +221,44 @@ header .left_nav ul {
     justify-content: center;
 }
 
-.slide-content p {
+.slide-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slide-actions a {
+    min-width: 112px;
+    padding: 13px 22px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 0;
+    background-color: #000;
+    color: #fff;
     font-size: 13px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, .9);
-    opacity: 1;
-    min-height: 3.2em;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-shadow: none;
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.slide-actions a:hover,
+.slide-actions a:focus-visible {
+    border-color: #fff;
+    background-color: #fff;
+    color: #000;
 }
 
 @media (max-width: 768px) {
     .slide-content h2 {
         min-height: 2.4em;
+        margin-bottom: 16px;
+    }
+
+    .slide-actions a {
+        min-width: 100px;
+        padding: 12px 18px;
     }
 }
 
@@ -491,105 +525,241 @@ header .left_nav ul {
 
 
 /* ==========================================
-   2. 동그라미 브랜드 로고 리스트
+   콜라보레이션 캐러셀
    ========================================== */
 
-.brand-heading {
-    margin-bottom: 56px;
-    text-align: center;
+.collaboration-section {
+    width: 100%;
+    margin-top: 160px;
+    padding: 96px 0 120px;
+    overflow: hidden;
+    background-color: #2a2a2a;
+    color: #fff;
 }
 
-.brand-heading h2 {
-    margin: 0;
-    color: #111;
-    font-size: 60px;
-    font-weight: 800;
+.collaboration-section > h2 {
+    margin: 0 0 72px;
+    font-size: clamp(26px, 2.2vw, 40px);
+    font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -0.035em;
+    text-align: center;
+    letter-spacing: -.03em;
 }
 
-.brand-heading p {
-    margin: 14px 0 0;
-    color: #111;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: -0.025em;
-}
-
-.brand-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-}
-
-.brand-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #666;
-    font-size: 12px;
-}
-
-.brand-circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 100%;
-    border: 2px solid #e5e5e5;
-    display: flex;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-    background-color: #fff;
-    transition: border-color 0.2s;
-}
-
-.brand-item:hover .brand-circle {
-    border-color: #0000FF;
-}
-
-.brand-circle img {
-    max-width: 86%;
-    max-height: 86%;
-    object-fit: cover;
-}
-
-/* ==========================================
-   3. 하단 2열 배너 (ZARA)
-   ========================================== */
-
-.promo-grid {
-    display: flex;
-    gap: 20px;
-    height: 640px;
-}
-
-.promo-item {
-    flex: 1;
-    height: 100%;
+.collaboration-slider {
+    --collab-width: clamp(620px, 50vw, 960px);
+    --collab-gap: clamp(80px, 8vw, 152px);
     position: relative;
-    /* 자식 absolute 기준점 */
-    overflow: hidden;
-    /* 이미지 밖으로 나가는 부분 잘라내기 */
+    width: 100%;
+    height: clamp(440px, 33vw, 620px);
+    outline: none;
 }
 
-/* ★ 이 부분을 수정해주세요 ★ */
-.promo-grid a img {
+.collaboration-track {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    gap: var(--collab-gap);
+    width: max-content;
+    height: 100%;
+    opacity: 0;
+    transition: transform .7s cubic-bezier(.22, 1, .36, 1),
+                opacity .2s ease;
+    will-change: transform;
+}
+
+.collaboration-slider.is-ready .collaboration-track {
+    opacity: 1;
+}
+
+.collaboration-slider.is-jumping .collaboration-track {
+    transition: none;
+}
+
+.collab-slide {
+    position: relative;
+    flex: 0 0 var(--collab-width);
+    display: block;
+    width: var(--collab-width);
+    color: #fff;
+    opacity: .42;
+    pointer-events: none;
+    transform: scale(.9);
+    transition: transform .7s cubic-bezier(.22, 1, .36, 1),
+                opacity .45s ease;
+}
+
+.collab-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.collab-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #202020;
+}
+
+.collab-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .22);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.collab-slide img,
+.collab-placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top;
     display: block;
 }
 
+.collab-slide img {
+    object-fit: cover;
+    object-position: center;
+    transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+}
 
-.promo-item .banner-text {
+.collab-placeholder {
+    background-color: #202020;
+}
+
+.collab-explore {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -.02em;
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px));
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.collab-slide.is-active:hover .collab-media::after,
+.collab-slide.is-active:focus-visible .collab-media::after,
+.collab-slide.is-active:hover .collab-explore,
+.collab-slide.is-active:focus-visible .collab-explore {
+    opacity: 1;
+}
+
+.collab-slide.is-active:hover .collab-explore,
+.collab-slide.is-active:focus-visible .collab-explore {
+    transform: translate(-50%, -50%);
+}
+
+.collab-slide.is-active:hover img {
+    transform: scale(1.02);
+}
+
+.collab-caption {
+    padding-top: 24px;
     text-align: center;
-    left: 0;
-    right: 0;
+}
+
+.collab-caption span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.collab-caption h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.collab-arrow {
+    position: absolute;
+    top: clamp(174px, 14.0625vw, 270px);
+    z-index: 5;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.collab-arrow svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.collab-prev { left: 20vw; }
+.collab-next { right: 20vw; }
+
+.collab-arrow:hover,
+.collab-arrow:focus-visible {
+    opacity: .55;
+}
+
+@media (max-width: 768px) {
+    .collaboration-section {
+        margin-top: 80px;
+        padding: 52px 0 72px;
+    }
+
+    .collaboration-section > h2 {
+        margin-bottom: 56px;
+        font-size: 22px;
+    }
+
+    .collaboration-slider {
+        --collab-width: min(70vw, 360px);
+        --collab-gap: 13vw;
+        height: min(calc(93.333vw + 76px), 556px);
+    }
+
+    .collab-media {
+        aspect-ratio: 3 / 4;
+    }
+
+    .collab-slide {
+        opacity: .42;
+        transform: scale(1);
+    }
+
+    .collab-caption {
+        padding-top: 20px;
+    }
+
+    .collab-caption h3 {
+        font-size: 15px;
+    }
+
+    .collab-arrow {
+        top: min(46.666vw, 240px);
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+    }
+
+    .collab-prev { left: 3vw; }
+    .collab-next { right: 3vw; }
 }
 
 
@@ -599,6 +769,7 @@ header .left_nav ul {
 .footer {
     width: 100%;
     background-color: #2a2a2a;
+    border-top: 1px solid rgba(255, 255, 255, .14);
     /* 어두운 다크 그레이/블랙 배경 */
     color: #a0a0a0;
     /* 연한 회색 텍스트 */
