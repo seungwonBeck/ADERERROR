@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./favicon/favicon.ico" type="image/x-icon">
     <title>ADERERROR</title>
-    <link rel="stylesheet" href="./css/main_style.css?v=20260805-gradient">
+    <link rel="stylesheet" href="./css/main_style.css?v=20260819-products-tabs">
     <link rel="stylesheet" href="./css/global-navigation.css?v=20260811">
     <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
 </head>
@@ -123,7 +123,7 @@
                 </div>
                 <!-- 추가 슬라이드: 이미지와 내용을 이 영역에 넣어주세요. -->
                 <div class="slide">
-                    <img src="./image/index_img/mainsd/main4.png" alt="메인 이미지 3">
+                    <img src="./image/index_img/mainsd/main4.jpg" alt="메인 이미지 3">
                     <div class="slide-content">
                         <h2>SIGNIFICANT</h2>
                         <div class="slide-actions">
@@ -152,6 +152,7 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
+
         </section>
 
         <section class="card-section">
@@ -192,14 +193,15 @@
 
         <!-- 1. 지금 주목해야 할 것들 섹션 -->
         <section class="section highlight-section">
-            <h2 class="section-title">지금 주목해야 할 것들</h2>
+            <h2 class="section-title">HIGHLIGHTS</h2>
 
             <div class="highlight-grid">
                 <!-- 왼쪽 세로형 큰 배너 -->
-                <a href="#" class="grid-item big-banner">
+                <a href="./sup/shop/shop.html" class="grid-item big-banner">
                     <img src="./image/index_img/index_01.jpg" alt="2026 SS 컬렉션 프리뷰">
                     <div class="card-gradient"></div>
                     <div class="banner-text">
+                        <span class="banner-kicker">01 / COLLECTION</span>
                         <h3>2026 SS 컬렉션 프리뷰</h3>
                         <p>시즌에 대한 한 걸음 빠른 시선, 새로운 스타일을 만나보세요.</p>
                     </div>
@@ -208,22 +210,150 @@
                 <!-- 오른쪽 위/아래 2개 배너 영역 -->
                 <div class="right-banners">
                     <!-- 오른쪽 위 배너 -->
-                    <a href="#" class="grid-item small-banner">
+                    <a href="./sup/aderaciv/aderaciv.html" class="grid-item small-banner">
                         <img src="./image/index_img/index_02.PNG" alt="Ader Archive 히트 상품">
                         <div class="card-gradient"></div>
                         <div class="banner-text">
-                            <h3>Ader Archive 히트 상품</h3>
-                            <p>아더에러에서 가장 인기가 많은 아이템들을 한자리에</p>
+                            <span class="banner-kicker">02 / ARCHIVE</span>
+                            <h3>Ader Archive 베스트</h3>
+                            <p>이번 시즌 가장 많이 찾은 아카이브 아이템을 만나보세요.</p>
+                            <span class="banner-action">SHOP THE ARCHIVE <span aria-hidden="true">&#8594;</span></span>
                         </div>
                     </a>
 
                     <!-- 오른쪽 아래 배너 -->
-                    <a href="#" class="grid-item small-banner">
+                    <a href="./sup/Style Guide/StyleGuide.html" class="grid-item small-banner">
                         <img src="./image/index_img/index_03.jpg" alt="스타일 PICK">
                         <div class="card-gradient"></div>
                         <div class="banner-text">
+                            <span class="banner-kicker">03 / STYLE</span>
                             <h3>스타일 PICK</h3>
-                            <p>자신의 체형과 맞는 스타일들은 어떤것이 있는지 확인해보세요!</p>
+                            <p>나에게 어울리는 새로운 실루엣과 스타일을 확인해보세요.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 메인 추천 상품 -->
+        <section class="section product-feature-section" aria-labelledby="product-feature-title">
+            <div class="product-feature-heading">
+                <div>
+                    <span class="product-feature-eyebrow">ADER PICKS / 26SS</span>
+                    <h2 id="product-feature-title">NEW ARRIVALS</h2>
+                </div>
+                <div class="product-feature-controls">
+                    <div class="product-gender-tabs" role="tablist" aria-label="New arrivals category">
+                        <button type="button" id="new-arrivals-men-tab" class="product-gender-tab is-active"
+                            role="tab" aria-selected="true" aria-controls="new-arrivals-men" tabindex="0">
+                            MEN
+                        </button>
+                        <button type="button" id="new-arrivals-women-tab" class="product-gender-tab"
+                            role="tab" aria-selected="false" aria-controls="new-arrivals-women" tabindex="-1">
+                            WOMEN
+                        </button>
+                    </div>
+                    <a href="./sup/shop/shop.html#products" class="product-view-all"
+                        data-men-href="./sup/shop/shop.html#products"
+                        data-women-href="./sup/shop/shop-tshirt.html#products">
+                        VIEW ALL <span aria-hidden="true">&#8594;</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="new-arrivals-men" class="product-feature-panel is-active" role="tabpanel"
+                aria-labelledby="new-arrivals-men-tab">
+                <div class="product-feature-grid">
+                    <a href="./sup/shop/shop.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">01</span>
+                            <img src="./sup/shop/img/shop_img/1.jpg" alt="블랙 블레이저 스타일링">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Blazer Product. 1</h3>
+                        </div>
+                    </a>
+
+                    <a href="./sup/shop/shop.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">02</span>
+                            <img src="./sup/shop/img/shop_img/2.jpg" alt="블랙 오버사이즈 블레이저 스타일링">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Blazer Product. 3</h3>
+                        </div>
+                    </a>
+
+                    <a href="./sup/shop/shop.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">03</span>
+                            <img src="./sup/shop/img/shop_img/3.jpg" alt="차콜 후드 재킷 스타일링">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Jacket Product. 11</h3>
+                        </div>
+                    </a>
+
+                    <a href="./sup/shop/shop.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">04</span>
+                            <img src="./sup/shop/img/shop_img/4.jpg" alt="다크 브라운 크롭 재킷 스타일링">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Jacket Product. 8</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="new-arrivals-women" class="product-feature-panel" role="tabpanel"
+                aria-labelledby="new-arrivals-women-tab" hidden>
+                <div class="product-feature-grid">
+                    <a href="./sup/shop/shop-tshirt.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">01</span>
+                            <img src="./sup/shop/img/shop_tshirt_img/0.jpg" alt="블루 스트라이프 헨리넥 티셔츠">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Henley Neck T-Shirt Product. 23</h3>
+                        </div>
+                    </a>
+
+                    <a href="./sup/shop/shop-tshirt.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">02</span>
+                            <img src="./sup/shop/img/shop_tshirt_img/1.jpg" alt="아이보리 스트라이프 하프 슬리브 니트">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Half Sleeve Knit Product. 26</h3>
+                        </div>
+                    </a>
+
+                    <a href="./sup/shop/shop-tshirt.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">03</span>
+                            <img src="./sup/shop/img/shop_tshirt_img/2.jpg" alt="그레이 패턴 하프 슬리브 니트">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Half Sleeve Shirt Product. 37</h3>
+                        </div>
+                    </a>
+
+                    <a href="./sup/shop/shop-tshirt.html#products" class="featured-product">
+                        <div class="featured-product-media">
+                            <span class="featured-product-number">04</span>
+                            <img src="./sup/shop/img/shop_tshirt_img/3.jpg" alt="블랙 하프 집업 셔츠">
+                            <span class="featured-product-cta">VIEW ITEM</span>
+                        </div>
+                        <div class="featured-product-info">
+                            <h3>Half Sleeve Shirt Product. 38</h3>
                         </div>
                     </a>
                 </div>
@@ -382,6 +512,7 @@
     <script src="./js/jquery-4.0.0.min.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="./js/index-slider.js"></script>
+    <script src="./js/new-arrivals-tabs.js"></script>
     <script src="./js/collaboration-slider.js"></script>
     <script src="./js/global-navigation.js?v=20260811" data-root="."></script>
 </body>
