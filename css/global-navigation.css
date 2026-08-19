@@ -49,7 +49,23 @@ body.ader-global-ready > header:not(.ader-global-header) { display: none !import
 }
 
 .ader-nav-primary { justify-content: flex-start; font-size: 12px; font-weight: 500; }
-.ader-nav-utility { justify-content: flex-end; font-size: 12px; font-weight: 500; }
+.ader-nav-utility {
+  justify-content: flex-end;
+  gap: clamp(28px, 3vw, 48px);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ader-nav-text-links,
+.ader-nav-icons,
+.ader-archive-link {
+  display: flex;
+  align-items: center;
+}
+
+.ader-nav-text-links { gap: clamp(20px, 2vw, 36px); }
+.ader-archive-link { gap: 5px; }
+.ader-nav-icons { gap: 16px; }
 .ader-nav-category {
   height: 36px;
   padding: 0 40px;
@@ -57,7 +73,7 @@ body.ader-global-ready > header:not(.ader-global-header) { display: none !import
   gap: 48px;
 }
 
-.ader-nav-primary button,
+.ader-nav-primary a,
 .ader-nav-category button,
 .ader-nav-icon,
 .ader-nav-menu-button {
@@ -67,12 +83,12 @@ body.ader-global-ready > header:not(.ader-global-header) { display: none !import
   cursor: pointer;
 }
 
-.ader-nav-primary button { appearance: none; line-height: 1; }
+.ader-nav-primary a { line-height: 1; }
 .ader-nav-category button { height: 36px; }
 .ader-nav-link:hover,
-.ader-nav-primary button:hover,
+.ader-nav-primary a:hover,
 .ader-nav-category button:hover { text-decoration: underline; text-underline-offset: 3px; }
-.ader-blue { display: inline-block; width: 6px; height: 6px; margin-right: 5px; background: #1d00ff; }
+.ader-blue { display: inline-block; flex: 0 0 auto; width: 6px; height: 6px; background: #1d00ff; }
 
 .ader-nav-icon { display: grid; place-items: center; width: 22px; height: 22px; }
 .ader-nav-icon svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.35; }
@@ -180,4 +196,74 @@ body.ader-menu-locked { overflow: hidden; }
   .ader-mobile-row.open .ader-mobile-sub { display: grid; gap: 13px; }
   .ader-mobile-search { display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 15px; }
   .ader-mobile-search svg { width: 17px; height: 17px; fill: none; stroke: currentColor; }
+}
+
+/* 모든 페이지 공통 푸터 */
+.footer {
+  width: 100%;
+  margin-top: 0;
+  padding: 64px 24px 80px;
+  background: #2a2a2a;
+  text-align: left;
+}
+
+.footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 200px));
+  align-items: start;
+  justify-content: start;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  gap: 0 24px;
+}
+
+.footer .footer-container > * {
+  flex: none;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .footer-col ul,
+.footer .footer-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer .footer-col li,
+.footer .footer-container a,
+.footer .footer-container span {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 56px 24px 64px;
+  }
+
+  .footer .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 200px));
+    gap: 40px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 48px 24px 60px;
+  }
+
+  .footer .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

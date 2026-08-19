@@ -657,7 +657,7 @@ header .left_nav ul {
 
 .featured-product-media {
     position: relative;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 2 / 3;
     overflow: hidden;
     background: #f6f6f6;
 }
@@ -672,9 +672,11 @@ header .left_nav ul {
 }
 
 .featured-product-media img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     transition: transform .65s cubic-bezier(.22, 1, .36, 1);
 }
 
@@ -735,8 +737,7 @@ header .left_nav ul {
 
 .featured-product-info h3 {
     margin: 0;
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 12px;
     font-weight: 600;
 }
 
