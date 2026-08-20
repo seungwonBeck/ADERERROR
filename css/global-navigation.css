@@ -1,3 +1,7 @@
+:root {
+  --ader-page-gutter: 20px;
+}
+
 .ader-global-header {
   position: fixed;
   inset: 0 0 auto;
@@ -28,11 +32,11 @@ body.ader-global-ready > header:not(.ader-global-header) { display: none !import
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: 100%;
+  width: calc(100% - var(--ader-page-gutter) - var(--ader-page-gutter));
   max-width: 1880px;
   height: 80px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .ader-nav-brand {
@@ -121,10 +125,10 @@ body.ader-global-ready > header:not(.ader-global-header) { display: none !import
   display: grid;
   grid-template-columns: 370px repeat(4, minmax(125px, 1fr));
   gap: 34px;
-  width: 100%;
+  width: calc(100% - var(--ader-page-gutter) - var(--ader-page-gutter));
   max-width: 1880px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
 }
 .ader-mega-feature { padding-right: 38px; border-right: 1px solid #ddd; }
 .ader-mega-title { display: block; margin-bottom: 22px; font-weight: 700; }
@@ -147,6 +151,10 @@ body.ader-global-ready > header:not(.ader-global-header) { display: none !import
 body.ader-menu-locked { overflow: hidden; }
 
 @media (max-width: 1024px) {
+  :root {
+    --ader-page-gutter: 16px;
+  }
+
   .ader-nav-top,
   .ader-nav-category,
   .ader-mega-menu { display: none; }
@@ -156,11 +164,11 @@ body.ader-menu-locked { overflow: hidden; }
     grid-template-columns: 40px minmax(0, 1fr) 40px;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: calc(100% - var(--ader-page-gutter) - var(--ader-page-gutter));
     max-width: 1880px;
     height: 80px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
   }
 
   .ader-mobile-head .ader-nav-brand { justify-self: center; }
@@ -225,10 +233,10 @@ body.ader-menu-locked { overflow: hidden; }
   grid-template-columns: repeat(4, minmax(0, 200px)) minmax(260px, 1fr);
   align-items: start;
   justify-content: start;
-  width: 100%;
+  width: calc(100% - var(--ader-page-gutter) - var(--ader-page-gutter));
   max-width: 1880px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   gap: 0 24px;
 }
 
@@ -317,7 +325,14 @@ body.ader-menu-locked { overflow: hidden; }
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --ader-page-gutter: 12px;
+  }
+}
+
 @media (max-width: 560px) {
+
   .footer {
     padding: 48px 0 60px;
   }
