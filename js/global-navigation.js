@@ -91,6 +91,19 @@
   document.body.insertBefore(header, document.body.firstChild);
   document.body.classList.add("ader-global-ready");
 
+  var footerContainer = document.querySelector(".footer .footer-container");
+  if (footerContainer && !footerContainer.querySelector(".footer-brand")) {
+    var footerBrand = document.createElement("aside");
+    footerBrand.className = "footer-brand";
+    footerBrand.setAttribute("aria-label", "ADERERROR 브랜드");
+    footerBrand.innerHTML =
+      '<a href="' + href(routes.home) + '" aria-label="ADERERROR 메인">' +
+      '<img src="' + href("image/footer_logo.png") + '" alt="ADERERROR">' +
+      '</a>' +
+      '<p>BUT NEAR MISSED THINGS</p>';
+    footerContainer.appendChild(footerBrand);
+  }
+
   var menuButton = header.querySelector(".ader-nav-menu-button");
   menuButton.addEventListener("click", function () {
     var open = header.classList.toggle("menu-open");
