@@ -129,7 +129,7 @@ header .left_nav ul {
 /* 푸터 전체 영역 */
 .footer {
     width: 100%;
-    background-color: #2a2a2a;
+    background-color: #000;
     /* 어두운 다크 그레이/블랙 배경 */
     color: #a0a0a0;
     /* 연한 회색 텍스트 */
@@ -515,7 +515,7 @@ header .logo img {
     margin-top: 0;
     padding: 60px 0 80px;
     color: #a0a0a0;
-    background: #2a2a2a
+    background: #000;
 }
 
 .footer-container {
