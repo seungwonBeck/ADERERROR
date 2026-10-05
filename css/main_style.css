@@ -1984,3 +1984,96 @@ header .left_nav ul {
 }
 
 .product-feature-grid .featured-product-media { aspect-ratio: 4 / 5; }
+
+/* ==========================================
+   메인 카드 3개: 비대칭 엔트리 그리드 (5 : 4 : 3)
+   ========================================== */
+.entry-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(12px, 1.6vw, 28px);
+    max-width: 1880px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.entry-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    color: #fff;
+    background: #e9e9e9;
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.entry-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.entry-card:hover img,
+.entry-card:focus-visible img { transform: scale(1.05); }
+
+.entry-shop { grid-column: 1 / 6; aspect-ratio: 4 / 5; }
+.entry-archive { grid-column: 6 / 10; aspect-ratio: 3 / 4; margin-top: clamp(60px, 9vw, 180px); }
+.entry-feed { grid-column: 10 / 13; aspect-ratio: 3 / 4.4; margin-top: clamp(20px, 3vw, 60px); }
+
+.entry-index {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    background: #0000ff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.entry-text {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+    text-align: left;
+}
+
+.entry-text h3 {
+    margin: 0 0 8px;
+    font-size: clamp(20px, 1.8vw, 32px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+}
+
+.entry-shop .entry-text h3 { font-size: clamp(28px, 3vw, 52px); }
+
+.entry-text p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: .85;
+}
+
+@media (max-width: 1024px) {
+    .entry-shop { grid-column: 1 / 13; aspect-ratio: 4 / 3.4; }
+    .entry-archive { grid-column: 1 / 7; margin-top: 20px; }
+    .entry-feed { grid-column: 7 / 13; margin-top: 80px; }
+}
+
+@media (max-width: 600px) {
+    .entry-shop { aspect-ratio: 4 / 4.6; }
+    .entry-archive { grid-column: 1 / 11; margin-top: 16px; aspect-ratio: 4 / 4.4; }
+    .entry-feed { grid-column: 3 / 13; margin-top: 16px; aspect-ratio: 4 / 4.4; }
+    .entry-text { left: 16px; right: 16px; bottom: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entry-card, .entry-card img { transition: none; }
+}
