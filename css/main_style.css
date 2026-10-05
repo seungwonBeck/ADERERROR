@@ -1757,3 +1757,27 @@ header .left_nav ul {
         line-height: 1.5;
     }
 }
+
+/* 세로형 캠페인 슬라이드 (블러 배경 + 원본 비율 이미지) */
+.slide-portrait .slide-portrait-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    object-fit: cover;
+    object-position: center;
+    filter: blur(40px) brightness(.7);
+    transform: scale(1.15);
+}
+
+.slide-portrait .slide-portrait-img {
+    position: relative;
+    z-index: 0;
+    width: auto;
+    max-width: 100%;
+    height: calc(100% - 80px);
+    margin-top: 80px;
+    object-fit: contain;
+    object-position: center;
+}
