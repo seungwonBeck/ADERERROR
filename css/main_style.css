@@ -2077,3 +2077,18 @@ header .left_nav ul {
 @media (prefers-reduced-motion: reduce) {
     .entry-card, .entry-card img { transition: none; }
 }
+
+/* 메인 대문 캡션: 흰 박스 라벨 */
+.slide-content h2.slide-label {
+    display: inline-block;
+    min-height: 0;
+    margin: 0 0 18px;
+    padding: 9px 20px;
+    background: #fff;
+    color: #111;
+    font-size: clamp(11px, 1vw, 14px);
+    font-weight: 500;
+    letter-spacing: .03em;
+    line-height: 1.2;
+    text-shadow: none;
+}
