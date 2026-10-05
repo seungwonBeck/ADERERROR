@@ -15,6 +15,37 @@
     styleFeed: "sup/Style Guide/StyleGuide.html",
     archive: "sup/aderaciv/aderaciv.html"
   };
+
+  var isEn = document.documentElement.lang === "en";
+  var EN = {
+    "남성": "Men", "여성": "Women", "액세서리": "Accessories", "콜라보레이션": "Collaborations", "시그니피컨트": "Significant", "에센스": "Essence",
+    "전체보기": "View All", "26FW 의류": "26FW Clothing", "26FW 액세서리": "26FW Accessories", "26FW 컬렉션": "26FW Collection",
+    "아우터": "Outerwear", "니트웨어": "Knitwear", "스웨트셔츠 & 후디": "Sweatshirts & Hoodies", "티셔츠": "T-shirts", "상의 & 셔츠": "Tops & Shirts",
+    "팬츠": "Pants", "드레스 & 스커트": "Dresses & Skirts", "데님": "Denim", "슈즈": "Shoes", "주얼리": "Jewelry", "모자": "Hats", "넥타이": "Ties",
+    "키링 & 참": "Key Rings & Charms", "지갑": "Wallets", "양말": "Socks", "벨트": "Belts", "10주년 아카이브": "10th Anniversary Archive", "10주년": "10th Anniversary",
+    "스타일 가이드": "Style Guide", "스타일피드": "Style Feed", "캠페인": "Campaign", "베스트 상품": "Best Sellers", "티셔츠 컬렉션": "T-shirt Collection",
+    "의류": "Clothing", "가방": "Bags", "토트백": "Tote Bags", "크로스백": "Crossbody Bags", "숄더백": "Shoulder Bags", "캡슐 컬렉션": "Capsule Collections",
+    "하이라이트": "Highlights", "인기 상품 보러가기": "Shop Best Sellers", "검색": "Search", "위시리스트": "Wishlist", "쇼핑백": "Shopping Bag",
+    "상품 카테고리": "Product categories", "사용자 메뉴": "User menu", "바로가기": "Quick links", "모바일 메뉴": "Mobile menu",
+    "ADERERROR 메인": "ADERERROR Home", "ADERERROR 컬렉션": "ADERERROR Collection", "ADERERROR 브랜드": "ADERERROR Brand",
+    "메뉴 열기": "Open menu", "메뉴 닫기": "Close menu"
+  };
+  var T = function (text) { return isEn && EN[text] ? EN[text] : text; };
+  var translateTree = function (node) {
+    if (!isEn) { return; }
+    var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+    var textNode;
+    while ((textNode = walker.nextNode())) {
+      var trimmed = textNode.nodeValue.trim();
+      if (EN[trimmed]) { textNode.nodeValue = textNode.nodeValue.replace(trimmed, EN[trimmed]); }
+    }
+    node.querySelectorAll("[aria-label],[alt]").forEach(function (el) {
+      ["aria-label", "alt"].forEach(function (attr) {
+        var value = el.getAttribute(attr);
+        if (value && EN[value]) { el.setAttribute(attr, EN[value]); }
+      });
+    });
+  };
   var icon = function (name) {
     var icons = {
       search: '<circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 4 4"></path>',
@@ -88,6 +119,7 @@
     '<div class="ader-mobile-head"><button class="ader-nav-menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button><a class="ader-nav-brand" href="' + href(routes.home) + '"><img src="' + href("image/index_img/logo.png") + '" alt="ADERERROR"></a><div class="ader-mobile-actions"><button class="ader-nav-icon" aria-label="쇼핑백">' + icon("bag") + '</button></div></div>' +
     '<nav class="ader-mobile-drawer" aria-label="모바일 메뉴">' + mobile + '<a class="ader-mobile-direct" href="' + href("sup/aderaciv/aderaciv.html") + '"><span>Poetic Project</span><span class="ader-mobile-arrow">›</span></a><div class="ader-mobile-search">' + icon("search") + '<span>검색</span></div></nav>';
 
+  translateTree(header);
   document.body.insertBefore(header, document.body.firstChild);
   document.body.classList.add("ader-global-ready");
 
@@ -95,7 +127,7 @@
   if (footerContainer && !footerContainer.querySelector(".footer-brand")) {
     var footerBrand = document.createElement("aside");
     footerBrand.className = "footer-brand";
-    footerBrand.setAttribute("aria-label", "ADERERROR 브랜드");
+    footerBrand.setAttribute("aria-label", T("ADERERROR 브랜드"));
     footerBrand.innerHTML =
       '<a href="' + href(routes.home) + '" aria-label="ADERERROR 메인">' +
       '<img src="' + href("image/footer_logo.png") + '" alt="ADERERROR">' +
@@ -109,7 +141,7 @@
     var open = header.classList.toggle("menu-open");
     document.body.classList.toggle("ader-menu-locked", open);
     menuButton.setAttribute("aria-expanded", String(open));
-    menuButton.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+    menuButton.setAttribute("aria-label", T(open ? "메뉴 닫기" : "메뉴 열기"));
   });
   header.querySelectorAll(".ader-mobile-row > button").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -134,7 +166,7 @@
       header.classList.remove("menu-open");
       document.body.classList.remove("ader-menu-locked");
       menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "메뉴 열기");
+      menuButton.setAttribute("aria-label", T("메뉴 열기"));
     }
   });
 })();

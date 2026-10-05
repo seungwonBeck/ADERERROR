@@ -93,3 +93,77 @@ body {
     .info-grid section { min-height: 190px; padding: 22px; }
     .info-grid h2 { margin-top: 48px; }
 }
+
+.info-grid section.wide {
+    grid-column: 1 / -1;
+    min-height: 0;
+}
+
+.info-grid .wide h2 { margin-top: 40px; }
+.info-grid .wide > p { max-width: 720px; }
+
+.info-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 24px;
+    margin: 20px 0 0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.info-list dt { color: #161616; font-weight: 700; }
+.info-list dd { margin: 0; color: #606060; }
+
+.info-empty {
+    margin-top: 24px !important;
+    padding: 14px 0;
+    border-top: 1px solid #d8d8d8;
+}
+
+.info-faq { margin-top: 24px; max-width: 880px; border-top: 1px solid #161616; }
+.info-faq details { border-bottom: 1px solid #d8d8d8; }
+.info-faq summary {
+    padding: 16px 28px 16px 0;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    list-style: none;
+    position: relative;
+}
+.info-faq summary::-webkit-details-marker { display: none; }
+.info-faq summary::after { content: "+"; position: absolute; right: 4px; color: #0000ff; }
+.info-faq details[open] summary::after { content: "–"; }
+.info-faq details p { max-width: none; padding: 0 0 18px; }
+
+.info-text { margin-top: 24px; max-width: 880px; }
+.info-text h3 { margin: 24px 0 6px; font-size: 13px; }
+.info-text p { max-width: none; margin-bottom: 8px; }
+
+.info-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+    border-top: 1px solid #161616;
+}
+.info-steps li { padding: 18px 20px 0 0; counter-increment: step; }
+.info-steps li::before { content: "0" counter(step); color: #0000ff; font-size: 10px; font-weight: 700; }
+.info-steps strong { display: block; margin: 10px 0 6px; font-size: 13px; }
+.info-steps span { color: #606060; font-size: 12px; line-height: 1.7; }
+
+.info-lang { display: flex; gap: 16px; margin-top: 24px !important; }
+.info-lang a { padding-bottom: 3px; border-bottom: 1px solid transparent; color: #606060; font-size: 12px; font-weight: 700; }
+.info-lang a[aria-current] { border-color: #161616; color: #161616; }
+
+@media (max-width: 900px) {
+    .info-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 0; }
+}
+
+@media (max-width: 600px) {
+    .info-steps { grid-template-columns: 1fr; }
+    .info-list { grid-template-columns: 1fr; gap: 2px; }
+    .info-list dd { margin-bottom: 8px; }
+}
