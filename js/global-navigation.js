@@ -33,16 +33,16 @@
     ["에센스", routes.essence]
   ];
   var groups = [
-    ["남성", ["전체보기", "26SS 의류", "아우터", "니트웨어", "스웨트셔츠 & 후디", "티셔츠", "상의 & 셔츠", "팬츠"]],
-    ["여성", ["전체보기", "26SS 의류", "아우터", "니트웨어", "티셔츠", "상의 & 셔츠", "팬츠", "드레스 & 스커트"]],
+    ["남성", ["전체보기", "26FW 의류", "아우터", "니트웨어", "스웨트셔츠 & 후디", "티셔츠", "상의 & 셔츠", "팬츠"]],
+    ["여성", ["전체보기", "26FW 의류", "아우터", "니트웨어", "티셔츠", "상의 & 셔츠", "팬츠", "드레스 & 스커트"]],
     ["액세서리", ["전체보기", "슈즈", "주얼리", "모자", "넥타이", "키링 & 참", "지갑", "양말", "벨트"]],
     ["콜라보레이션", ["Poetic Project", "Bluemark", "10주년 아카이브"]],
     ["시그니피컨트", ["스타일 가이드", "스타일피드", "캠페인"]],
     ["에센스", ["베스트 상품", "티셔츠 컬렉션", "Key Look"]]
   ];
   var megaColumns = [
-    ["의류", "전체보기", "26SS 의류", "아우터", "니트웨어", "스웨트셔츠 & 후디", "티셔츠", "상의 & 셔츠", "팬츠", "데님"],
-    ["액세서리", "전체보기", "26SS 액세서리", "슈즈", "주얼리", "모자", "넥타이", "키링 & 참", "지갑", "양말", "벨트"],
+    ["의류", "전체보기", "26FW 의류", "아우터", "니트웨어", "스웨트셔츠 & 후디", "티셔츠", "상의 & 셔츠", "팬츠", "데님"],
+    ["액세서리", "전체보기", "26FW 액세서리", "슈즈", "주얼리", "모자", "넥타이", "키링 & 참", "지갑", "양말", "벨트"],
     ["가방", "전체보기", "토트백", "크로스백", "숄더백"],
     ["캡슐 컬렉션", "10주년", "Poetic Project", "Bluemark"]
   ];
@@ -84,7 +84,7 @@
     '<a class="ader-nav-brand" href="' + href(routes.home) + '" aria-label="ADERERROR 메인"><img src="' + href("image/index_img/logo.png") + '" alt="ADERERROR"></a>' +
     '<nav class="ader-nav-utility" aria-label="사용자 메뉴"><div class="ader-nav-text-links"><a href="' + href(routes.styleFeed) + '">스타일피드</a><span class="ader-archive-link"><span class="ader-blue" aria-hidden="true"></span><a href="' + href(routes.archive) + '">Ader Archive</a></span></div><div class="ader-nav-icons" role="group" aria-label="바로가기"><button class="ader-nav-icon" aria-label="검색">' + icon("search") + '</button><button class="ader-nav-icon" aria-label="위시리스트">' + icon("heart") + '</button><button class="ader-nav-icon" aria-label="쇼핑백">' + icon("bag") + '</button></div></nav>' +
     '</div>' +
-    '<div class="ader-mega-menu"><div class="ader-mega-inner"><section class="ader-mega-feature"><strong class="ader-mega-title">하이라이트</strong><div class="ader-mega-list"><a href="' + href("sup/shop/shop.html") + '">26SS 컬렉션</a><a href="' + href("sup/shop/shop-tshirt.html") + '">티셔츠 컬렉션</a><a href="' + href("sup/aderaciv/aderaciv.html") + '">Poetic Project</a></div><div class="ader-feature-art"><img src="' + href("image/nav_header.jpg") + '" alt="ADERERROR 컬렉션"></div><a href="' + href("sup/shop/shop.html") + '">인기 상품 보러가기</a></section>' + mega + '</div></div>' +
+    '<div class="ader-mega-menu"><div class="ader-mega-inner"><section class="ader-mega-feature"><strong class="ader-mega-title">하이라이트</strong><div class="ader-mega-list"><a href="' + href("sup/shop/shop.html") + '">26FW 컬렉션</a><a href="' + href("sup/shop/shop-tshirt.html") + '">티셔츠 컬렉션</a><a href="' + href("sup/aderaciv/aderaciv.html") + '">Poetic Project</a></div><div class="ader-feature-art"><img src="' + href("image/nav_header.jpg") + '" alt="ADERERROR 컬렉션"></div><a href="' + href("sup/shop/shop.html") + '">인기 상품 보러가기</a></section>' + mega + '</div></div>' +
     '<div class="ader-mobile-head"><button class="ader-nav-menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button><a class="ader-nav-brand" href="' + href(routes.home) + '"><img src="' + href("image/index_img/logo.png") + '" alt="ADERERROR"></a><div class="ader-mobile-actions"><button class="ader-nav-icon" aria-label="쇼핑백">' + icon("bag") + '</button></div></div>' +
     '<nav class="ader-mobile-drawer" aria-label="모바일 메뉴">' + mobile + '<a class="ader-mobile-direct" href="' + href("sup/aderaciv/aderaciv.html") + '"><span>Poetic Project</span><span class="ader-mobile-arrow">›</span></a><div class="ader-mobile-search">' + icon("search") + '<span>검색</span></div></nav>';
 
