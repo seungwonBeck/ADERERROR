@@ -1,0 +1,27 @@
+/* 섹션 진입 애니메이션: JS가 html.js-reveal 을 붙였을 때만 숨김 상태로 시작 (JS 없으면 그대로 노출) */
+.js-reveal [data-reveal] {
+    opacity: 0;
+    translate: 0 36px;
+    transition: opacity .9s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay, 0s),
+                translate .9s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay, 0s);
+    will-change: opacity, translate;
+}
+
+.js-reveal [data-reveal="fade"] { translate: 0 0; }
+
+.js-reveal [data-reveal="left"] { translate: -36px 0; }
+.js-reveal [data-reveal="right"] { translate: 36px 0; }
+
+.js-reveal [data-reveal].is-revealed {
+    opacity: 1;
+    translate: 0 0;
+    will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js-reveal [data-reveal] {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+}
