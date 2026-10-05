@@ -30,7 +30,7 @@
       slide.classList.toggle("active", active);
       slide.setAttribute("aria-hidden", String(!active));
     });
-    title.innerHTML = "ADER 26 / FW <span>" + categories[current] + "</span>";
+    title.innerHTML = "ADER 26 / SS <span>" + categories[current] + "</span>";
     counter.textContent = String(current + 1).padStart(2, "0") + " / " + String(slides.length).padStart(2, "0");
     progress.style.setProperty("--hero-progress", ((current + 1) / slides.length * 100) + "%");
   }
