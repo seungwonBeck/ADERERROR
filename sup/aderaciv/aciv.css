@@ -1053,14 +1053,6 @@ header .left_nav ul {
 
 /* ===================== 최종 레이아웃 보강 ===================== */
 
-/* 히어로 제목: 이미지와 흰 배경을 가로지르며 색이 반전되는 겹침 */
-.archive-hero { z-index: auto; }
-
-.archive-hero-title {
-  color: #fff;
-  mix-blend-mode: difference;
-}
-
 /* 소개 영역: 좌(제목) / 우(본문) 2단 */
 .archive-intro.archive-intro--split {
   display: grid;
@@ -1132,9 +1124,6 @@ header .left_nav ul {
   .archive-intro--split .ai-head { position: static; }
   .archive-intro--split .ai-body p { font-size: 12px; }
 }
-
-/* mix-blend-mode 제목이 흰 배경 위에서도 반전되도록 문서 배경을 명시 */
-html, body { background: #fff; }
 
 /* ===================== 캠페인 피처 (큰 이미지 + 작은 컷 조합) ===================== */
 .archive-feature {
